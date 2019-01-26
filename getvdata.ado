@@ -52,8 +52,7 @@ if `"`key'"' == "" {
   display "6.ex.Breast, 8.12.Framingham, 8.7.Framingham, 8.8.2.Person-Years, "
   display "8.8.2.Survival, 8.ex.InjuryDeath, 11.ex.Sepsis"
   display " "
-  display "Keys for Whitlock and Schluter datasets at"
-  display "http://biostat.mc.vanderbilt.edu/MsciBiostatIIDatasets"
+  display `"Keys for Whitlock and Schluter datasets are {browse "http://biostat.mc.vanderbilt.edu/MsciBiostatIIDatasets":here (link)}."'
   exit
 }
 else if `"`key'"' == "02-e-2a" {
