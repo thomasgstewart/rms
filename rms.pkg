@@ -1,0 +1,19 @@
+v 3
+
+d 'rms': Regression Modeling Strategies.
+d RMS the popular statistics textbook (and course) by 
+d Frank E. Harrell, Jr.  This package is a collection of 
+d commands to help STATA users implement some of the modeling 
+d strategies outlined in the textbook and course.
+d 
+d Keywords: Partial effect plots, 
+d 
+d The author of this package is responsible for its errors, not 
+d Frank Harrell.  Additions and corrections are welcome and 
+d should be submitted via the {browse 'http://www.github.com/thomasgstewart/rms': package page on GitHub}.
+d 
+d Distribution-Date: 2019-01-25
+d 
+d 
+F getvdata.ado
+F getvdata.sthlp

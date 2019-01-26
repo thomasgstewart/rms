@@ -1,0 +1,5 @@
+
+v 3
+d Thomas Stewart, Dept. Biostatistics, Vanderbilt University School of Medicine
+d {browse 'http://www.github.com/thomasgstewart/rms':Package website on Github}
+p rms Regression Modeling Strategies
