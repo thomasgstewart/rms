@@ -29,9 +29,8 @@
 
 {p 4 4 2}
 Thomas G. Stewart
-​​Department of Biostatis
+Department of Biostatistics
 Vanderbilt University School of Medicine
 thomas.stewart@vanderbilt.edu
-
 
 

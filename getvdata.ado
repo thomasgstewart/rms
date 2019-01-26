@@ -25,10 +25,9 @@ __getvdata__ will slurp datasets listed on the Vanderbilt Biostatistics Website 
 ## Author
 
 Thomas G. Stewart
-​​Department of Biostatistics
+Department of Biostatistics
 Vanderbilt University School of Medicine
 thomas.stewart@vanderbilt.edu
-
 ***/
 
 *capture program drop getvdata
