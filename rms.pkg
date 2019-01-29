@@ -12,8 +12,10 @@ d The author of this package is responsible for its errors, not
 d Frank Harrell.  Additions and corrections are welcome and 
 d should be submitted via the {browse 'http://www.github.com/thomasgstewart/rms': package page on GitHub}.
 d 
-d Distribution-Date: 2019-01-25
+d Distribution-Date: 2019-01-28
 d 
 d 
 F getvdata.ado
 F getvdata.sthlp
+F plotdata.ado
+F plotdata.sthlp
