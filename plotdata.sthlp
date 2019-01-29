@@ -8,22 +8,23 @@
 
 {title:Syntax}
 
-{p 8 8 2} {it:plotdata} [if] [in] [, at({it:str}) ]
+{p 4 4 2}
+{bf:plotdata} [if] [in] [, at({it:str}) ]
 
 {p 4 4 2}
-{it:options}
+{bf:options}
 
 {space 4}{hline}
 
 {p 4 4 2}
-{ul:*at}*({it:str}): a list of variable names and values.  For example, at(bmi=19.5(1)32.5 sex=1/2 age=45).
+{bf:at} ({it:str}): a list of variable names and values separated by a semicolon; for example, at(bmi=19.5(1)32.5; sex=1/2; age=45).
 
 {space 4}{hline}
 
 {title:Description}
 
 {p 4 4 2}
-This command creates a dataset by creating all possible combinations of variable values listed in the {it:at} option.  The dataset is appended to the current dataset.  The first time the command is used, it creates the variable {bf:plotindicator} to indicate which observations are the original data (marked as missing) and which is the newly appended data for the plot (marked as 1).  The second time the command is executed, the newly appended dataset is marked as 2 in the {bf:plotindicator} variable, and so forth.
+This command creates a dataset by creating all possible combinations of variable values listed in the {it:at} option.  The dataset is appended to the current dataset.  The first time the command is used, it creates the variable {bf:plotindicator} to indicate which observations are the original data (marked as 0) and which is the newly appended data for the plot (marked as 1).  The second time the command is executed, the newly appended dataset is marked as 2 in the {bf:plotindicator} variable, and so forth.
 
 {title:Example}
 
@@ -44,10 +45,9 @@ This command creates a dataset by creating all possible combinations of variable
 
 {title:Author}
 
-{p 4 4 2}
-Thomas G. Stewart\
-Department of Biostatistics\
-Vanderbilt University School of Medicine\
-thomas.stewart@vanderbilt.edu
+{space 2}Thomas G. Stewart
+    thomas.stewart@vanderbilt.edu
+    Department of Biostatistics
+    Vanderbilt University School of Medicine
 
 

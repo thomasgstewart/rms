@@ -7,19 +7,19 @@ __[plotdata](https://github.com/thomasgstewart/rms)__ --- create and append a da
 
 ## Syntax
 
-> _plotdata_ [if] [in] [, at(_str_) ]
+__plotdata__ [if] [in] [, at(_str_) ]
 
-_options_
+__options__
 
 - - -
 
-***at***(_str_): a list of variable names and values.  For example, at(bmi=19.5(1)32.5 sex=1/2 age=45).
+__at__ (_str_): a list of variable names and values separated by a semicolon; for example, at(bmi=19.5(1)32.5; sex=1/2; age=45).
 
 - - -
 
 ## Description
 
-This command creates a dataset by creating all possible combinations of variable values listed in the _at_ option.  The dataset is appended to the current dataset.  The first time the command is used, it creates the variable __plotindicator_ to indicate which observations are the original data (marked as missing) and which is the newly appended data for the plot (marked as 1).  The second time the command is executed, the newly appended dataset is marked as 2 in the __plotindicator_ variable, and so forth.
+This command creates a dataset by creating all possible combinations of variable values listed in the _at_ option.  The dataset is appended to the current dataset.  The first time the command is used, it creates the variable __plotindicator__ to indicate which observations are the original data (marked as 0) and which is the newly appended data for the plot (marked as 1).  The second time the command is executed, the newly appended dataset is marked as 2 in the __plotindicator__ variable, and so forth.
 
 ## Example
 
@@ -40,10 +40,10 @@ This command creates a dataset by creating all possible combinations of variable
 
 ## Author
 
-Thomas G. Stewart\
-Department of Biostatistics\
-Vanderbilt University School of Medicine\
-thomas.stewart@vanderbilt.edu
+  Thomas G. Stewart
+    thomas.stewart@vanderbilt.edu
+    Department of Biostatistics
+    Vanderbilt University School of Medicine
 ***/
 
 
@@ -56,9 +56,13 @@ syntax [if] [in] [, at(str) ]
 local varlist = ""
 local counter = 1
 if "`at'" != "" {
+
+local at : subinstr local at " " "", all
+local at : subinstr local at ";" " ", all
+
  	foreach p of local at {
  		local whereq = strpos("`p'", "=")
- 		if `whereq' == 0 { 	
+ 		if `whereq' == 0 {
  			di as err "invalid syntax in at()"
  			exit 198
  		}
@@ -76,10 +80,10 @@ if "`at'" != "" {
 			*display "`spec'"
 			local spec "`r(numlist)'"
 			*display "`spec'"
- 			local spec`counter' = "`spec'" 
+ 			local spec`counter' = "`spec'"
 			local var`counter' = "`varname'"
-                         
-			
+
+
 			local numlistcounter = 0
 			foreach j of numlist `spec'{
 			  local numlistcounter = `numlistcounter' + 1
@@ -98,12 +102,12 @@ if "`at'" != "" {
  display "you want predict the outcome."
  exit
  }
- 
+
 local plotindicator = "_plotindicator"
 capture confirm variable `plotindicator'
 if _rc {
   generate `plotindicator' = 0
-  gen _maxplot = 0 
+  gen _maxplot = 0
 }
 else{
   egen _maxplot = max(`plotindicator')
@@ -113,7 +117,7 @@ tempfile temp1
 quietly save "`temp1'"
 
 quietly drop if _n > 0
-	
+
 local numvars = `counter' - 1
 local oldN = _N
 local moreN = 0
@@ -124,7 +128,7 @@ foreach j of numlist 1/`numvars'{
     local moreN = `Nspec`j''
   }
   local startN = `oldN' + 1
-  
+
   foreach jj of numlist `spec`j''{
     quietly replace `var`j'' = `jj' in `startN'/`startN'
     local startN = `startN' + 1
@@ -132,29 +136,33 @@ foreach j of numlist 1/`numvars'{
   }
 }
 
-keep `varlist' 
-fillin _all
-quietly drop _fillin
-egen nmiss = rowmiss(_all)
-quietly drop if nmiss > 0
-quietly drop nmiss
+keep `varlist'
+if "`numvars'" != "1" {
+  fillin _all
+  quietly drop _fillin
+  egen nmiss = rowmiss(_all)
+  quietly drop if nmiss > 0
+  quietly drop nmiss
+}
 
 tempfile temp2
+local addedN = _N
 quietly save "`temp2'"
 
 use "`temp1'"
 append using "`temp2'"
 gen _maxplotj = 1
-gen _maxplotnext = _maxplot + _maxplotj
+quietly gen _maxplotnext = _maxplot + _maxplotj
 quietly replace `plotindicator' = `=_maxplotnext' if `plotindicator' == .
 quietly drop _maxplot*
+display "`addedN'" " observations added"
 end
- 
+
 capture program drop moreobs
 program def moreobs
-*! 1.0.1 NJC 9 August 1999 
+*! 1.0.1 NJC 9 August 1999
 * 1.0.0 NJC 22 January 1998
-    version 5.0 	
+    version 5.0
     if "`2'" != "" {
         di in r "invalid syntax"
         exit 198
@@ -175,7 +183,7 @@ syntax varlist(max=1) [if] [in] , nknots(integer)
 local com2 = "rcs_" + "`varlist'" + "_1"
 capture confirm variable `com2'
 	if _rc {
-		
+
 	}
 	else{
 		di as err "`com2'" " already exists in dataset"
@@ -225,7 +233,7 @@ quietly levelsof crapola
 local com1 = "rcs_" + "`varlist'" + "_ = " + "`varlist'"
 
 mkspline `com1' if `touse', cubic knots(`r(levels)') displayknots
-	
+
 quietly drop crapola
-	
+
 end
