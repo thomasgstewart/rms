@@ -19,6 +19,8 @@ F fussydrop.ado
 F fussydrop.sthlp
 F getvdata.ado
 F getvdata.sthlp
+F logistic_phat_ci.ado
+F logistic_phat_ci.sthlp
 F mkspline_plotindicator.ado
 F mkspline_plotindicator.sthlp
 F plotdata.ado
