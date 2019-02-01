@@ -24,7 +24,7 @@ Options:
 {title:Description}
 
 {p 4 4 2}
-This command creates a dataset by creating all possible combinations of variable values listed in the {it:at} option.  The dataset is appended to the current dataset.  The first time the command is used, it creates the variable {bf:_plotindicator} to indicate which observations are the original data (marked as 0) and which is the newly appended data for the plot (marked as 1).  The second time the command is executed, the newly appended dataset is marked as 2 in the {bf:_plotindicator} variable, and so forth.
+This command creates a dataset by creating all possible combinations of variable values listed in the {it:at} option.  The dataset is appended to the current dataset.  The first time the command is used, it creates the variable {bf:_plotindicator} to mark which observations are the original data (marked as 0) and which is the newly appended data for the plot (marked as 1).  The second time the command is executed, the newly appended dataset is marked as 2 in the {bf:_plotindicator} variable, and so forth.
 
 {title:Example}
 
@@ -33,7 +33,7 @@ This command creates a dataset by creating all possible combinations of variable
 	. plotdata, at(age=30(.5)60; sex=1/2)
 	. mkspline_plotindicator age, nknots(3)
 	. logistic response i.sex#c.rcs_*
-	. logistic_phat_ci xb
+	. logistic_phat_ci, xb
 	. twoway (rarea response_xbhat_lb response_xbhat_ub age if sex==2, sort fcolor(blue%70)) ///
 	    (line response_xbhat age if sex==2, sort lcolor(blue) lwidth(thick)) ///
 	    (rarea response_xbhat_lb response_xbhat_ub age if sex==1, sort fcolor(orange%70)) ///
