@@ -1,1 +1,1 @@
-net install egenmore
+ssc install egenmore
