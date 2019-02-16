@@ -60,7 +60,7 @@ qui save `tmpfile'
 tokenize `"`e(cmdline)'"'
 local obs_r2 = e(r2)
 
-qui simulate optim = r(optim), reps(`reps') seed(`seed'): validate_with_bootstrap, command(`e(cmdline)')
+qui simulate optim = r(optim), reps(`reps') seed(`seed'): regress_one_delta, command(`e(cmdline)')
 
 qui summarize optim
 local corrected = `obs_r2' - r(mean)
@@ -76,30 +76,6 @@ display "| R^2     |   " %4.3f `obs_r2' "  |       " %4.3f `corrected' "        
 clear
 qui use `tmpfile'
 end
-
-
-
-capture program drop validate_with_bootstrap
-program validate_with_bootstrap, rclass
-
-syntax, command(str)
-
-tokenize `"`command'"'
-
-preserve
-bsample
-quietly `command'
-restore
-predict _yhat, xb
-
-quietly corr _yhat `2'
-return scalar optim = e(r2) - r(rho)^2
-drop _yhat
-end
-
-
-
-
 
 capture program drop optimism_one_rep
 program optimism_one_rep, eclass

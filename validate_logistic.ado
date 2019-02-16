@@ -63,7 +63,7 @@ local obs_auc = r(roc_area)
 local obs_brier = r(brier)
 drop _phat
 
-qui simulate delta_auc = r(delta_auc) delta_brier = r(delta_brier), reps(`reps') seed(`seed'): validate_with_bootstrap, command(`e(cmdline)')
+qui simulate delta_auc = r(delta_auc) delta_brier = r(delta_brier), reps(`reps') seed(`seed'): logistic_one_delta, command(`e(cmdline)')
 
 //hist delta_auc
 
@@ -82,34 +82,4 @@ display "| Brier   |   " %4.3f `obs_brier' "  |       " %4.3f `corrected_brier' 
 
 clear
 qui use `tmpfile'
-end
-
-capture program drop validate_with_bootstrap
-program validate_with_bootstrap, rclass
-
-syntax, command(str)
-
-tokenize `"`command'"'
-
-//list in 1
-preserve
-bsample
-//list in 1
-quietly `command'
-predict _phat, pr
-quietly brier `e(depvar)' _phat
-matrix aaa = (r(brier), r(roc_area))
-matrix colnames aaa = Brier AUC
-
-restore
-
-predict _phat, pr
-quietly brier `e(depvar)' _phat
-matrix bbb = (r(brier), r(roc_area))
-matrix colnames bbb = Brier AUC
-
-matrix delta = aaa - bbb
-return scalar delta_brier = delta[1,1]
-return scalar delta_auc = delta[1,2]
-drop _phat
 end
