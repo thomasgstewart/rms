@@ -29,6 +29,11 @@ Description
 
 __regress_yhat_ci__ will generate predictions and associated confidence intervals from a linear regression model.  This command is built on top of the {help predict:{it:predict}} command.
 
+Note
+----
+
+This command will generate population mean intervals from a bootstrapped linear model; however, it will not generate forecast intervals from the bootstrapped model.
+
 Example(s)
 ----------
 
@@ -36,7 +41,7 @@ See {help plotdata:{it:plotdata}}
 
 ***/
 
-*capture program drop regress_yhat_ci
+capture program drop regress_yhat_ci
 program regress_yhat_ci
 //http://www.stata.com/statalist/archive/2007-03/msg00372.html
 
@@ -86,9 +91,16 @@ if "`cmd'" != "regress" {
 
 	predict `stub'`dv'_hat, xb
 	predict _yhatse, `type'
+	
+	if("`e(df_r)'" == ""){
+	  local z = 1.96
+	}
+	else{
+	  local z = invttail(e(df_r),`alpha'/2)
+	}
 
-	generate `stub'`dv'_hat_lb = `stub'`dv'_hat - invttail(e(df_r),`alpha'/2) * _yhatse
-	generate `stub'`dv'_hat_ub = `stub'`dv'_hat + invttail(e(df_r),`alpha'/2) * _yhatse
+	generate `stub'`dv'_hat_lb = `stub'`dv'_hat - `z' * _yhatse
+	generate `stub'`dv'_hat_ub = `stub'`dv'_hat + `z' * _yhatse
 
 	drop _yhatse
 
