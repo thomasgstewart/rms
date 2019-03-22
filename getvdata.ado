@@ -18,10 +18,10 @@ __getvdata__ will slurp datasets listed on the Vanderbilt Biostatistics Website 
 
     List some available keys
         . getvdata
-				
+
     Slurp a specific dataset
         . getvdata prostate
-	
+
 ## Author
 
 Thomas G. Stewart
@@ -42,7 +42,7 @@ if `"`key'"' == "" {
   display "syntax: getvdata key"
   display " "
   display "Keys of available datasets: abm, acath, birth_estriol, cdystonia,"
-  display "dmd, esopH, FEV, lead, nhgh, pbc, prostate, rhc, "
+  display "diabetes, dmd, esopH, FEV, lead, nhgh, pbc, prostate, rhc, "
   display "sex.age.response, stressEcho, support, titanic3, valung, "
   display "1.3.2.Sepsis, 1.4.11.Sepsis, 10.7.ERpolymorphism, "
   display "11.2.Isoproterenol, 11.2.Long.Isoproterenol, 11.AreaUnderCurve, "
@@ -1135,6 +1135,10 @@ else if `"`key'"' == "cdystonia" {
   use "http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/cdystonia.dta", clear
   exit
 }
+else if `"`key'"' == "diabetes"{
+  import delimited "http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/diabetes.csv", clear
+  exit
+}
 else if `"`key'"' == "dmd" {
   import delimited "http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/dmd.csv", clear
   exit
@@ -1292,7 +1296,7 @@ else if `"`key'"' == "sat" {
   exit
 }
 else if `"`key'"' == "key"{
-  display "abm, acath, birth_estriol, cdystonia, dmd, esopH, FEV, lead, nhgh, pbc, prostate, rhc, sex.age.response, stressEcho, support, titanic3, valung, 1.3.2.Sepsis, 1.4.11.Sepsis, 10.7.ERpolymorphism, 11.2.Isoproterenol, 11.2.Long.Isoproterenol, 11.AreaUnderCurve, 2.12.Poisson, 2.18.Funding, 2.20.Framingham, 2.ex.vonHippelLindau, 3.ex.Funding, 4.11.Sepsis, 4.18.Sepsis, 4.21.EsophagealCa, 4.ex.Sepsis, 5.5.EsophagealCa, 5.ex.InjuryDeath, 6.9.Hemorrhage, 6.ex.Breast, 8.12.Framingham, 8.7.Framingham, 8.8.2.Person-Years, 8.8.2.Survival, 8.ex.InjuryDeath, 11.ex.Sepsis"
+  display "abm, acath, birth_estriol, cdystonia, diabetes, dmd, esopH, FEV, lead, nhgh, pbc, prostate, rhc, sex.age.response, stressEcho, support, titanic3, valung, 1.3.2.Sepsis, 1.4.11.Sepsis, 10.7.ERpolymorphism, 11.2.Isoproterenol, 11.2.Long.Isoproterenol, 11.AreaUnderCurve, 2.12.Poisson, 2.18.Funding, 2.20.Framingham, 2.ex.vonHippelLindau, 3.ex.Funding, 4.11.Sepsis, 4.18.Sepsis, 4.21.EsophagealCa, 4.ex.Sepsis, 5.5.EsophagealCa, 5.ex.InjuryDeath, 6.9.Hemorrhage, 6.ex.Breast, 8.12.Framingham, 8.7.Framingham, 8.8.2.Person-Years, 8.8.2.Survival, 8.ex.InjuryDeath, 11.ex.Sepsis"
 }
 else {
   display "Dataset not found.  Use 'getvdata' to see list of available datasets."

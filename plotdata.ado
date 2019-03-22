@@ -138,13 +138,7 @@ foreach j of numlist 1/`numvars'{
 }
 
 keep `varlist'
-if "`numvars'" != "1" {
-  fillin _all
-  quietly drop _fillin
-  egen nmiss = rowmiss(_all)
-  quietly drop if nmiss > 0
-  quietly drop nmiss
-}
+all_combos _all
 
 tempfile temp2
 local addedN = _N

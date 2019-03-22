@@ -12,9 +12,11 @@ d The author of this package is responsible for its errors, not
 d Frank Harrell.  Additions and corrections are welcome and 
 d should be submitted via the {browse 'http://www.github.com/thomasgstewart/rms': package page on GitHub}.
 d 
-d Distribution-Date: 2019-02-26
+d Distribution-Date: 2019-03-21
 d 
 d 
+F all_combos.ado
+F all_combos.sthlp
 F fussydrop.ado
 F fussydrop.sthlp
 F getvdata.ado
