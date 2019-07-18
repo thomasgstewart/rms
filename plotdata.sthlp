@@ -17,7 +17,7 @@
 Options:
 
 
-{p 8 8 2} {bf:at} ({it:str}): a list of variable names and values separated by a semicolon; for example, at(bmi=19.5(1)32.5; sex=1/2; age=45).
+{p 8 8 2} {bf:at} ({it:str}): a list of variable names and values separated by a semicolon; for example, at(bmi=19.5(1)32.5; sex=1/2; age=45).   There is a limit for the length of STATA numlists, depending on the release and version.  I believe a limit of 1600 elements is the smallest limit.  (You may have a version that allows more.)  Generally speaking, this limit should not impact this function because most plots will not require such a dense set of covariate values.
 
 {space 4}{hline}
 
