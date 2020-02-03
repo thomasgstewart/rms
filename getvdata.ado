@@ -880,7 +880,7 @@ else if `"`key'"' == "16-q-27" {
   exit
 }
 else if `"`key'"' == "17-e-1" {
-  import delimited "http://whitlockschluter.zoology.ubc.ca/wp-content/data/chapter17/chap17e1LionNoses.csv", clear
+  import delimited "https://whitlockschluter.zoology.ubc.ca/wp-content/data/chapter17/chap17e1LionNoses.csv", clear
   exit
 }
 else if `"`key'"' == "17-e-3" {
