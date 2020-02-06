@@ -98,7 +98,7 @@ local at : subinstr local at ";" " ", all
  else {
  display "Use this function to add extra data to your dataset for for plotting."
  display "Example syntax: "
- display "  plotdata, at(bmi=19.5(1)32.5 sex=1/2 age=45)"
+ display "  plotdata, at(bmi=19.5(1)32.5; sex=1/2; age=45)"
  display "Within the at() function, specify the values of the variables at which"
  display "you want predict the outcome."
  exit
@@ -138,15 +138,15 @@ foreach j of numlist 1/`numvars'{
 }
 
 keep `varlist'
-all_combos _all
+quietly all_combos _all
 
 tempfile temp2
 local addedN = _N
 quietly save "`temp2'"
 
-use "`temp1'"
-append using "`temp2'"
-gen _maxplotj = 1
+quietly use "`temp1'"
+quietly append using "`temp2'"
+quietly gen _maxplotj = 1
 quietly gen _maxplotnext = _maxplot + _maxplotj
 quietly replace `plotindicator' = `=_maxplotnext' if `plotindicator' == .
 quietly drop _maxplot*
