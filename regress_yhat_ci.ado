@@ -16,7 +16,7 @@ Options:
 
 >    __forecast__ : If specified, the command generates individual forecast intervals instead of population mean intervals (which is the default output).
 
->    __alpha__ (_int_) : A number; the default is 5 which generates 95% confidence intervals.  If specified, the command will generate  (1-alpha)% confidence intervals.
+>    __alpha__ (_int_) : A number; the default is 0.05 which generates 95% confidence intervals.  If specified, the command will generate  (1-alpha)% confidence intervals.
 
 >    __stub__ (_str_) : A string which will serve as a prefix for the generated variables.
 
