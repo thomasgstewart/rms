@@ -37,7 +37,7 @@ args key
 
 if `"`key'"' == "" {
   display "Function will load datasets from the collection at"
-  display "Vanderbilt Biostatistics (http://biostat.mc.vanderbilt.edu/DataSets)"
+  display "Vanderbilt Biostatistics (http://biostat.app.vumc.org/DataSets)"
   display " "
   display "syntax: getvdata key"
   display " "
@@ -52,7 +52,7 @@ if `"`key'"' == "" {
   display "6.ex.Breast, 8.12.Framingham, 8.7.Framingham, 8.8.2.Person-Years, "
   display "8.8.2.Survival, 8.ex.InjuryDeath, 11.ex.Sepsis"
   display " "
-  display `"Keys for Whitlock and Schluter datasets are {browse "http://biostat.mc.vanderbilt.edu/MsciBiostatIIDatasets":here (link)}."'
+  display `"Keys for Whitlock and Schluter datasets are {browse "http://biostat.app.vumc.org/MsciBiostatIIDatasets":here (link)}."'
   exit
 }
 else if `"`key'"' == "02-e-2a" {
@@ -1120,179 +1120,179 @@ else if `"`key'"' == "21-p-3" {
   exit
 }
 else if `"`key'"' == "abm" {
-  use "http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/abm.dta", clear
+  use "http://biostat.app.vumc.org/wiki/pub/Main/DataSets/abm.dta", clear
   exit
 }
 else if `"`key'"' == "acath" {
-  use "http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/acath.dta", clear
+  use "http://biostat.app.vumc.org/wiki/pub/Main/DataSets/acath.dta", clear
   exit
 }
 else if `"`key'"' == "birth_estriol" {
-  import delimited "http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/birth_estriol.csv", clear
+  import delimited "http://biostat.app.vumc.org/wiki/pub/Main/DataSets/birth_estriol.csv", clear
   exit
 }
 else if `"`key'"' == "cdystonia" {
-  use "http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/cdystonia.dta", clear
+  use "http://biostat.app.vumc.org/wiki/pub/Main/DataSets/cdystonia.dta", clear
   exit
 }
 else if `"`key'"' == "diabetes"{
-  import delimited "http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/diabetes.csv", clear
+  import delimited "http://biostat.app.vumc.org/wiki/pub/Main/DataSets/diabetes.csv", clear
   exit
 }
 else if `"`key'"' == "dmd" {
-  import delimited "http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/dmd.csv", clear
+  import delimited "http://biostat.app.vumc.org/wiki/pub/Main/DataSets/dmd.csv", clear
   exit
 }
 else if `"`key'"' == "esopH" {
-  use "http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/esopH.dta", clear
+  use "http://biostat.app.vumc.org/wiki/pub/Main/DataSets/esopH.dta", clear
   exit
 }
 else if `"`key'"' == "FEV" {
-  import delimited "http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/FEV.csv", clear
+  import delimited "http://biostat.app.vumc.org/wiki/pub/Main/DataSets/FEV.csv", clear
   exit
 }
 else if `"`key'"' == "lead" {
-  use "http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/lead.dta", clear
+  use "http://biostat.app.vumc.org/wiki/pub/Main/DataSets/lead.dta", clear
   exit
 }
 else if `"`key'"' == "nhgh" {
-  use "http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/nhgh.dta", clear
+  use "http://biostat.app.vumc.org/wiki/pub/Main/DataSets/nhgh.dta", clear
   exit
 }
 else if `"`key'"' == "pbc" {
-  use "http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/pbc.dta", clear
+  use "http://biostat.app.vumc.org/wiki/pub/Main/DataSets/pbc.dta", clear
   exit
 }
 else if `"`key'"' == "prostate" {
-  use "http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/prostate.dta", clear
+  use "http://biostat.app.vumc.org/wiki/pub/Main/DataSets/prostate.dta", clear
   exit
 }
 else if `"`key'"' == "rhc" {
-  import delimited "http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/rhc.csv", clear
+  import delimited "http://biostat.app.vumc.org/wiki/pub/Main/DataSets/rhc.csv", clear
   exit
 }
 else if `"`key'"' == "sex.age.response" {
-  use "http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/sex.age.response.dta", clear
+  use "http://biostat.app.vumc.org/wiki/pub/Main/DataSets/sex.age.response.dta", clear
   exit
 }
 else if `"`key'"' == "stressEcho" {
-  import delimited "http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/stressEcho.csv", clear
+  import delimited "http://biostat.app.vumc.org/wiki/pub/Main/DataSets/stressEcho.csv", clear
   exit
 }
 else if `"`key'"' == "support" {
-  use "http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/support.dta", clear
+  use "http://biostat.app.vumc.org/wiki/pub/Main/DataSets/support.dta", clear
   exit
 }
 else if `"`key'"' == "titanic3" {
-  use "http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/titanic3.dta", clear
+  use "http://biostat.app.vumc.org/wiki/pub/Main/DataSets/titanic3.dta", clear
   exit
 }
 else if `"`key'"' == "valung" {
-  import delimited "http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/valung.csv", clear
+  import delimited "http://biostat.app.vumc.org/wiki/pub/Main/DataSets/valung.csv", clear
   exit
 }
 else if `"`key'"' == "1.3.2.Sepsis" {
-  import delimited "http://biostat.mc.vanderbilt.edu/dupontwd/wddtext/data/1.3.2.Sepsis.csv", clear
+  import delimited "http://biostat.app.vumc.org/dupontwd/wddtext/data/1.3.2.Sepsis.csv", clear
   exit
 }
 else if `"`key'"' == "1.4.11.Sepsis" {
-  import delimited "http://biostat.mc.vanderbilt.edu/dupontwd/wddtext/data/1.4.11.Sepsis.csv", clear
+  import delimited "http://biostat.app.vumc.org/dupontwd/wddtext/data/1.4.11.Sepsis.csv", clear
   exit
 }
 else if `"`key'"' == "10.7.ERpolymorphism" {
-  import delimited "http://biostat.mc.vanderbilt.edu/dupontwd/wddtext/data/10.7.ERpolymorphism.csv", clear
+  import delimited "http://biostat.app.vumc.org/dupontwd/wddtext/data/10.7.ERpolymorphism.csv", clear
   exit
 }
 else if `"`key'"' == "11.2.Isoproterenol" {
-  import delimited "http://biostat.mc.vanderbilt.edu/dupontwd/wddtext/data/11.2.Isoproterenol.csv", clear
+  import delimited "http://biostat.app.vumc.org/dupontwd/wddtext/data/11.2.Isoproterenol.csv", clear
   exit
 }
 else if `"`key'"' == "11.2.Long.Isoproterenol" {
-  import delimited "http://biostat.mc.vanderbilt.edu/dupontwd/wddtext/data/11.2.Long.Isoproterenol.csv", clear
+  import delimited "http://biostat.app.vumc.org/dupontwd/wddtext/data/11.2.Long.Isoproterenol.csv", clear
   exit
 }
 else if `"`key'"' == "11.AreaUnderCurve" {
-  import delimited "http://biostat.mc.vanderbilt.edu/dupontwd/wddtext/data/11.AreaUnderCurve.csv", clear
+  import delimited "http://biostat.app.vumc.org/dupontwd/wddtext/data/11.AreaUnderCurve.csv", clear
   exit
 }
 else if `"`key'"' == "2.12.Poisson" {
-  import delimited "http://biostat.mc.vanderbilt.edu/dupontwd/wddtext/data/2.12.Poisson.csv", clear
+  import delimited "http://biostat.app.vumc.org/dupontwd/wddtext/data/2.12.Poisson.csv", clear
   exit
 }
 else if `"`key'"' == "2.18.Funding" {
-  import delimited "http://biostat.mc.vanderbilt.edu/dupontwd/wddtext/data/2.18.Funding.csv", clear
+  import delimited "http://biostat.app.vumc.org/dupontwd/wddtext/data/2.18.Funding.csv", clear
   exit
 }
 else if `"`key'"' == "2.20.Framingham" {
-  import delimited "http://biostat.mc.vanderbilt.edu/dupontwd/wddtext/data/2.20.Framingham.csv", clear
+  import delimited "http://biostat.app.vumc.org/dupontwd/wddtext/data/2.20.Framingham.csv", clear
   exit
 }
 else if `"`key'"' == "2.ex.vonHippelLindau" {
-  import delimited "http://biostat.mc.vanderbilt.edu/dupontwd/wddtext/data/2.ex.vonHippelLindau.csv", clear
+  import delimited "http://biostat.app.vumc.org/dupontwd/wddtext/data/2.ex.vonHippelLindau.csv", clear
   exit
 }
 else if `"`key'"' == "3.ex.Funding" {
-  import delimited "http://biostat.mc.vanderbilt.edu/dupontwd/wddtext/data/3.ex.Funding.csv", clear
+  import delimited "http://biostat.app.vumc.org/dupontwd/wddtext/data/3.ex.Funding.csv", clear
   exit
 }
 else if `"`key'"' == "4.11.Sepsis" {
-  import delimited "http://biostat.mc.vanderbilt.edu/dupontwd/wddtext/data/4.11.Sepsis.csv", clear
+  import delimited "http://biostat.app.vumc.org/dupontwd/wddtext/data/4.11.Sepsis.csv", clear
   exit
 }
 else if `"`key'"' == "4.18.Sepsis" {
-  import delimited "http://biostat.mc.vanderbilt.edu/dupontwd/wddtext/data/4.18.Sepsis.csv", clear
+  import delimited "http://biostat.app.vumc.org/dupontwd/wddtext/data/4.18.Sepsis.csv", clear
   exit
 }
 else if `"`key'"' == "4.21.EsophagealCa" {
-  import delimited "http://biostat.mc.vanderbilt.edu/dupontwd/wddtext/data/4.21.EsophagealCa.csv", clear
+  import delimited "http://biostat.app.vumc.org/dupontwd/wddtext/data/4.21.EsophagealCa.csv", clear
   exit
 }
 else if `"`key'"' == "4.ex.Sepsis" {
-  import delimited "http://biostat.mc.vanderbilt.edu/dupontwd/wddtext/data/4.ex.Sepsis.csv", clear
+  import delimited "http://biostat.app.vumc.org/dupontwd/wddtext/data/4.ex.Sepsis.csv", clear
   exit
 }
 else if `"`key'"' == "5.5.EsophagealCa" {
-  import delimited "http://biostat.mc.vanderbilt.edu/dupontwd/wddtext/data/5.5.EsophagealCa.csv", clear
+  import delimited "http://biostat.app.vumc.org/dupontwd/wddtext/data/5.5.EsophagealCa.csv", clear
   exit
 }
 else if `"`key'"' == "5.ex.InjuryDeath" {
-  import delimited "http://biostat.mc.vanderbilt.edu/dupontwd/wddtext/data/5.ex.InjuryDeath.csv", clear
+  import delimited "http://biostat.app.vumc.org/dupontwd/wddtext/data/5.ex.InjuryDeath.csv", clear
   exit
 }
 else if `"`key'"' == "6.9.Hemorrhage" {
-  import delimited "http://biostat.mc.vanderbilt.edu/dupontwd/wddtext/data/6.9.Hemorrhage.csv", clear
+  import delimited "http://biostat.app.vumc.org/dupontwd/wddtext/data/6.9.Hemorrhage.csv", clear
   exit
 }
 else if `"`key'"' == "6.ex.Breast" {
-  import delimited "http://biostat.mc.vanderbilt.edu/dupontwd/wddtext/data/6.ex.Breast.csv", clear
+  import delimited "http://biostat.app.vumc.org/dupontwd/wddtext/data/6.ex.Breast.csv", clear
   exit
 }
 else if `"`key'"' == "8.12.Framingham" {
-  import delimited "http://biostat.mc.vanderbilt.edu/dupontwd/wddtext/data/8.12.Framingham.csv", clear
+  import delimited "http://biostat.app.vumc.org/dupontwd/wddtext/data/8.12.Framingham.csv", clear
   exit
 }
 else if `"`key'"' == "8.7.Framingham" {
-  import delimited "http://biostat.mc.vanderbilt.edu/dupontwd/wddtext/data/8.7.Framingham.csv", clear
+  import delimited "http://biostat.app.vumc.org/dupontwd/wddtext/data/8.7.Framingham.csv", clear
   exit
 }
 else if `"`key'"' == "8.8.2.Person-Years" {
-  import delimited "http://biostat.mc.vanderbilt.edu/dupontwd/wddtext/data/8.8.2.Person-Years.csv", clear
+  import delimited "http://biostat.app.vumc.org/dupontwd/wddtext/data/8.8.2.Person-Years.csv", clear
   exit
 }
 else if `"`key'"' == "8.8.2.Survival" {
-  import delimited "http://biostat.mc.vanderbilt.edu/dupontwd/wddtext/data/8.8.2.Survival.csv", clear
+  import delimited "http://biostat.app.vumc.org/dupontwd/wddtext/data/8.8.2.Survival.csv", clear
   exit
 }
 else if `"`key'"' == "8.ex.InjuryDeath" {
-  import delimited "http://biostat.mc.vanderbilt.edu/dupontwd/wddtext/data/8.ex.InjuryDeath.csv", clear
+  import delimited "http://biostat.app.vumc.org/dupontwd/wddtext/data/8.ex.InjuryDeath.csv", clear
   exit
 }
 else if `"`key'"' == "11.ex.Sepsis" {
-  import delimited "http://biostat.mc.vanderbilt.edu/dupontwd/wddtext/data/11.ex.Sepsis.csv", clear
+  import delimited "http://biostat.app.vumc.org/dupontwd/wddtext/data/11.ex.Sepsis.csv", clear
   exit
 }
 else if `"`key'"' == "sat" {
-  import delimited "http://biostat.mc.vanderbilt.edu/wiki/pub/Main/MsciBiostatIIAssignments/sat.csv", clear
+  import delimited "http://biostat.app.vumc.org/wiki/pub/Main/MsciBiostatIIAssignments/sat.csv", clear
   exit
 }
 else if `"`key'"' == "key"{

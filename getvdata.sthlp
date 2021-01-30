@@ -21,10 +21,10 @@
 
     List some available keys
         . getvdata
-				
+
     Slurp a specific dataset
         . getvdata prostate
-	
+
 {title:Author}
 
 {p 4 4 2}
